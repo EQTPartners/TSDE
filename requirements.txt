@@ -1,0 +1,12 @@
+matplotlib
+numpy
+pandas
+requests
+scikit-learn
+scipy
+tqdm
+wget  # Note: 'wget' package might be named differently in Conda
+--extra-index-url https://download.pytorch.org/whl/cu118 ## if cuda is available if not comment to use cpu
+torch==2.2.1+cu118
+pyyaml
+gdown

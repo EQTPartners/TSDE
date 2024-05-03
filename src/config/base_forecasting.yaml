@@ -1,0 +1,34 @@
+#type: args
+
+train:
+  epochs: 400       ## Pre-raining epochs using IIF masking
+  batch_size: 8
+  lr: 1.0e-3
+
+diffusion:
+  layers: 4         ##  Number of residual layers in the denoising block
+  channels: 64      ##  Number of channels for projections in the denoising block (residual channels)
+  diffusion_embedding_dim: 128    ## Diffusion step embedding dimension
+  beta_start: 0.0001      ## minimum noise level in the forward pass
+  beta_end: 0.5           ## maximum noise level in the forward pass
+  num_steps: 50           ## Total number of diffusion steps
+  schedule: "quad"        ## Type of noise scheduler
+
+model:
+  timeemb: 128            ## Time embedding dimension
+  featureemb: 16          ## Feature embedding dimension
+  mix_masking_strategy: "equal_p"   ## Mix masking strategy
+  time_strategy: "hawkes"           ## Time embedding type
+  
+embedding:
+  timeemb: 128
+  featureemb: 16
+  num_feat: 35            ## Total number of features in the MTS (K)
+  num_timestamps: 48      ## Total number of timestamps in the MTS (L)
+  classes: 1
+  channels: 16             ## Number of embedding dimension in both temporal and spatial encoders
+  nheads: 8               ## Number of heads in the temporal and spatial encoders
+  
+finetuning:
+  epochs: 20             ## Number of finetuning epochs for the downstream task
+  
