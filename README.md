@@ -5,10 +5,7 @@
 **Self-Supervised Learning of Time Series Representation via Diffusion Process and Imputation-Interpolation-Forecasting Mask**
 
 <p align="center">
-  <!-- <a href="https://github.com/ZinebSenane/TSDE/blob/main/LICENSE">
-    <img alt="GitHub License" src="https://img.shields.io/github/license/hengruizhang98/tabsyn">
-  </a> -->
-  <a href="https://github.com/ZinebSenane/TSDE/blob/main/LICENSE">
+  <a href="https://github.com/EQTPartners/TSDE/blob/main/LICENSE">
     <img alt="GitHub License" src="https://img.shields.io/badge/license-MIT -green">
   </a>
   <a href="https://arxiv.org/abs/">
