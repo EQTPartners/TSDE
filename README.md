@@ -8,8 +8,8 @@
   <a href="https://github.com/EQTPartners/TSDE/blob/main/LICENSE">
     <img alt="GitHub License" src="https://img.shields.io/badge/license-MIT -green">
   </a>
-  <a href="https://arxiv.org/abs/">
-    <img alt="Paper URL" src="https://img.shields.io/badge/arxiv-xxxxx-blue">
+  <a href="https://arxiv.org/abs/2405.05959">
+    <img alt="Paper URL" src="https://img.shields.io/badge/arxiv-05959-blue">
   </a>
 </p>
 
@@ -19,6 +19,7 @@
   <a href="#examples">Examples</a> •
   <a href="#checkpoints">Checkpoints</a> •
   <a href="https://storage.googleapis.com/motherbrain-tsde/Datasets.zip">Processed Datasets</a> •
+  <a href="#citation">Citation</a>
 </p>
 </div>
 
@@ -136,4 +137,14 @@ python src/experiments/train_test_anomaly_detection.py --device [device] --datas
 ```
 python src/experiments/train_test_classification.py --device [device] --modelfolder [path_to_checkpoint_folder] --run [run_number] --disable_finetune
 ```
-
+## Citation
+```
+@article{senane2024tsde,
+  title={{Self-Supervised Learning of Time Series Representation via Diffusion Process and Imputation-Interpolation-Forecasting Mask}},
+  author={Senane, Zineb and Cao, Lele and Buchner, Valentin Leonhard and Tashiro, Yusuke and You, Lei and Herman, Pawel and Nordahl, Mats and Tu, Ruibo and von Ehrenheim, Vilhelm},
+  year={2024},
+  eprint={2405.05959},
+  archivePrefix={arXiv},
+  primaryClass={cs.LG}
+}
+```
