@@ -13,7 +13,6 @@
   </a>
 </p>
 
-------
 <p align="center">
   <a href="#tsde-training-and-evaluation">Usage</a> •
   <a href="#examples">Examples</a> •
@@ -22,6 +21,12 @@
   <a href="#citation">Citation</a>
 </p>
 </div>
+
+------
+
+:triangular_flag_on_post:**News** (2024.06) We have added scripts to run forecasting experiments on the Electricity dataset provided by [TimesNet](https://github.com/thuml/Time-Series-Library).
+
+------
 
 
 > Time Series Diffusion Embedding (TSDE), bridges the gap of leveraging diffusion models for Time Series Representation Learning (TSRL) as the first diffusion-based SSL TSRL approach. TSDE segments time series data into observed and masked parts using an Imputation-Interpolation-Forecasting (IIF) mask. It applies a trainable embedding function, featuring dual-orthogonal Transformer encoders with a crossover mechanism, to the observed part. We train a reverse diffusion process conditioned on the embeddings, designed to predict noise added to the masked part. Extensive experiments demonstrate TSDE’s superiority in imputation, interpolation, forecasting, anomaly detection, classification, and clustering. 
@@ -71,9 +76,9 @@ In our experiments, we set [test_missing_ratio] to: 0.1, 0.5, and 0.9
 Please first set the number of pretraining and finetuning epochs for each dataset in src/config/base_forecasting.yaml, and set the number of features for subsampling training in the TSDE_forecasting model in src/model/main_model.py.
 Run the following command:
 ```
-python src/experiments/train_test_forecasting.py --dataset [dataset-name] --device [device] 
+python src/experiments/train_test_forecasting.py --dataset [dataset-name] --device [device] --sample_feat
 ```
-
+Please remove the flag --sample_feat to disable the sub-sampling of features during training.
 ### Anomaly Detection
 Please first set the number of features, the number of pretraining and finetuning epochs for each dataset in src/config/base_ad.yaml.
 Run the following command:
@@ -88,6 +93,13 @@ Run the following command:
 ```
 python src/experiments/train_test_classification.py --seed [seed] --device [device] --testmissingratio [test_missing_ratio]
 ```
+### Benchmarking TSDE against Time Series Library models
+1. Upload the Electricity dataset following their guidelines available [here](https://github.com/thuml/Time-Series-Library). The dataset folder should be in the root directory.
+2. Run the following command:
+```
+python src/experiments/train_test_tslib_forecasting.py --device [device] --pred_length [pred_length] --hist_length [hist_length]
+```
+The values of [pred_length], and [hist_length] used in our experiments are available in our paper.
 
 ## Examples
 #### Examples of imputation, interpolation and forecasting
