@@ -19,8 +19,8 @@ parser = argparse.ArgumentParser(description="TSDE-Forecasting")
 parser.add_argument("--config", type=str, default="base_forecasting.yaml")
 parser.add_argument('--device', default='cuda:0', help='Device for Attack')
 parser.add_argument("--seed", type=int, default=1)
-parser.add_argument("--linear", type=bool, default=False)
-parser.add_argument("--sample_feat", type=bool, default=True)
+parser.add_argument('--linear', action='store_true', help='Linear mode flag')
+parser.add_argument('--sample_feat', action='store_true', help='Sample feature flag')
 
 
 parser.add_argument("--dataset", type=str, default='Electricity')
